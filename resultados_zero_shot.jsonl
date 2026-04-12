@@ -1,0 +1,5 @@
+{"id": 0, "comentario": "Mais um lixo", "class_previsto": 0, "class_real": 1, "motivo": "A frase não atinge os critérios de discurso de ódio, apenas uma expressão negativa sem base em raça, religião, etnia, orientação sexual, deficiência ou gênero."}
+{"id": 1, "comentario": "Essa nao tem vergonha na cara!!", "class_previsto": 1, "class_real": 1, "motivo": "A frase ataca pessoalmente alguém, portanto contém discurso de ódio."}
+{"id": 2, "comentario": "Essa mulher é doente.pilantra!", "class_previsto": 1, "class_real": 1, "motivo": "Linguagem que ataca uma pessoa com base no gênero"}
+{"id": 3, "comentario": "Comunista safada...", "class_previsto": 1, "class_real": 1, "motivo": "A frase ataca uma pessoa com base na sua opinião política (comunismo), que é um grupo protegido pela regra."}
+{"id": 4, "comentario": "Vagabunda. Comunista. Mentirosa. O povo chileno nao merece uma desgraça desta.", "class_previsto": 1, "class_real": 1, "motivo": "A frase ataca e humilia um grupo de pessoas com base em sua nacionalidade (Chilena) e ideologia política (comunista), além de incitar violência contra eles."}
