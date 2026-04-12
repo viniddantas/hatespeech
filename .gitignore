@@ -1,0 +1,14 @@
+test.py
+
+# Variáveis de ambiente (Segurança)
+.env
+
+# Ambientes virtuais (Tamanho/Portabilidade)
+.venv/
+venv/
+env/
+ENV/
+
+# Arquivos compilados do Python
+__pycache__/
+*.py[cod]
