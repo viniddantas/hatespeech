@@ -1,11 +1,9 @@
 import ollama
-from datasets import load_dataset
 from pydantic import BaseModel
 import json
 import pandas as pd
-from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
-
+import emoji
 
 df = pd.read_csv("HateBR.csv")
 arquivo_saida = "resultados_zero_shot.jsonl"
@@ -34,7 +32,8 @@ system_prompt = f"""
 
 with open(arquivo_saida, 'a', encoding='utf-8') as f:
     for idx, (frase, label_final, id_test) in enumerate(zip(x_test, y_test, id_test)):
-
+        frase = emoji.demojize(frase, language='pt')
+        frase = frase.replace(':', '').replace('_', ' ')
         try:
             response = ollama.chat(
                 model='mistral:7b',
