@@ -71,20 +71,32 @@ with open(arquivo_saida, 'a', encoding='utf-8') as f:
         frase = emoji.demojize(frase, language='pt')
         frase = frase.replace(':', '').replace('_', ' ')
         try:
-
-            response = retrieval_chain.invoke({'input': frase})
-            response = response['answer']
             
-            classificacao = response.classificacao
-            motivo = response.motivo
+            response = retrieval_chain.invoke({'input': frase})
+            
+            results = response['answer']
+            retrieval_documents = response['context']
+
+            context = []
+            for item in retrieval_documents:
+                context.append({
+                    'source': item.metadata['source'],
+                    'content': item.page_content
+                })
+            
+            
+            classificacao = results.classificacao
+            motivo = results.motivo
 
             resultado_final = {
                 'id': id_test,
                 'comentario': frase,
                 'class_previsto': classificacao,
                 'class_real': int(label_final),
-                'motivo': motivo
+                'motivo': motivo,
+                'documents': context
             }
+            
 
             f.write(json.dumps(resultado_final, ensure_ascii=False) + '\n')
 
