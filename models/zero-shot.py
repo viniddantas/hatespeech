@@ -5,8 +5,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import emoji
 
-df = pd.read_csv("HateBR.csv")
-arquivo_saida = "resultados_zero_shot.jsonl"
+df = pd.read_csv("./datasets/HateBR.csv")
+arquivo_saida = "./results/resultados_zero_shot.jsonl"
 
 indices_originais = list(range(len(df)))
 x = df['comentario']
