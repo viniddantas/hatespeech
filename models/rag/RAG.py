@@ -53,8 +53,8 @@ document_chain = create_stuff_documents_chain(llm = model, prompt = prompt, outp
 retrieval_chain = create_retrieval_chain(retriever, document_chain) # Responsável por passar os documentos e o prompt para a LLM
 
 # =========================== Separa os dados de treino e teste ===========================
-df = pd.read_csv("HateBR.csv")
-arquivo_saida = "resultados_rag.jsonl"
+df = pd.read_csv("./datasets/HateBR.csv")
+arquivo_saida = "./results/resultados_rag.jsonl"
 
 indices_originais = list(range(len(df)))
 x = df['comentario']
@@ -71,7 +71,6 @@ with open(arquivo_saida, 'a', encoding='utf-8') as f:
         frase = emoji.demojize(frase, language='pt')
         frase = frase.replace(':', '').replace('_', ' ')
         try:
-            
             response = retrieval_chain.invoke({'input': frase})
             
             results = response['answer']
