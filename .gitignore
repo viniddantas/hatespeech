@@ -12,3 +12,5 @@ ENV/
 # Arquivos compilados do Python
 __pycache__/
 *.py[cod]
+
+models/rag/documents
